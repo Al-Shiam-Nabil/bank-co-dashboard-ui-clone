@@ -1,1 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+
 @import "tailwindcss";
+
+body {
+  font-family: "Urbanist", sans-serif;
+  background: #fafafa;
+}
+
+@theme {
+  --color-primary: #22c55e;
+  --color-dark2: #718096;
+  --color-dark3: #e2e8f0;
+  --color-dark4: #fafafa;
+}
+
+@layer {
+  .noScrollBar::-webkit-scrollbar {
+    display: none;
+  }
+}
