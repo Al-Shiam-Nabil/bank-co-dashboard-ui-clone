@@ -1,4 +1,5 @@
 import Analytics from "../Icons/analytics.svg?react";
+import ArrowUpDown from "../Icons/arrowUpDown.svg?react";
 import Calender from "../Icons/calender.svg?react";
 import ComingSoon from "../Icons/comingSoon.svg?react";
 import DashboardHome from "../Icons/dashBoardIcon.svg?react";
@@ -18,6 +19,7 @@ import User from "../Icons/user.svg?react";
 
 export {
   Analytics,
+  ArrowUpDown,
   Calender,
   ComingSoon,
   DashboardHome,

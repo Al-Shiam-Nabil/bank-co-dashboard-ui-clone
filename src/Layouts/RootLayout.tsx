@@ -33,7 +33,8 @@ import ProfileImage from "../assets/profileImage.png";
 
 export default function RootLayout() {
   const [showSideBar, setShowSideBar] = useState<boolean>(false);
-  // const [showSubMenu, setShowSubMenu] = useState<number | null>(null);
+
+  const [showSubMenu, setShowSubMenu] = useState<number | null>(null);
 
   const sideBar = [
     {
@@ -168,14 +169,17 @@ export default function RootLayout() {
   ];
 
   return (
-    <div className="relative">
+    <div className="relative ">
       {/*  top  bar */}
-      <div className="flex items-center w-full lg:h-27 bg-white fixed z-80">
+      <div className="flex items-center w-full overflow-x-hidden lg:h-27 bg-white fixed z-80">
         {/* logo */}
         <div className=" hidden  pl-12.5 shrink-0 w-77 lg:flex justify-between items-center h-full ">
           <FullLogo />
 
-          <div className=" bg-primary w-3 h-10 rounded-l-lg grid place-items-center cursor-pointer">
+          <div
+            onClick={() => setShowSideBar((prev) => !prev)}
+            className=" bg-primary w-3 h-10 rounded-l-lg grid place-items-center cursor-pointer"
+          >
             <ChevronLeft stroke="white" size={16} />
           </div>
         </div>
@@ -209,8 +213,8 @@ export default function RootLayout() {
           </div>
 
           {/* icons */}
-          <div className="flex items-center gap-12">
-            <div className="hidden lg:flex gap-5 items-center">
+          <div className="flex items-center gap-8 2xl:gap-12">
+            <div className="hidden 2xl:flex gap-5 items-center">
               {/* dark mode */}
               <div className="w-13 h-13 rounded-xl border border-primary grid place-items-center cursor-pointer ">
                 <Moon />
@@ -286,14 +290,16 @@ export default function RootLayout() {
         </div>
       </div>
 
-      <div className="flex">
+      <div className="flex w-full relative  ">
         {/* left side bar */}
         <div
-          className={`noScrollBar  shrink-0 w-77 h-full overflow-y-auto  bg-white border-t border-dark3/30 fixed  lg:top-27 z-80 lg:z-30 transition-all duration-700 ease-in-out ${
-            showSideBar ? "translate-x-0" : "-translate-x-100 lg:translate-x-0"
+          className={`noScrollBar   shrink-0 w-77 h-full overflow-y-auto  bg-white border-t border-dark3/30 fixed  lg:top-27 z-80 lg:z-30 transition-all duration-700 ease-in-out   ${
+            showSideBar
+              ? "translate-x-0 lg:-translate-x-100 "
+              : "-translate-x-100  lg:translate-x-0"
           } `}
         >
-          {/* logo */}
+          {/* logo  small device */}
           <div className="lg:hidden sticky top-0 left-0 z-90  bg-white w-full pl-12.5  flex items-center py-7 border-b border-gray-100">
             <FullLogo />
 
@@ -315,7 +321,14 @@ export default function RootLayout() {
                 <ul className="flex flex-col gap-3 mt-3">
                   {sidebarTitle.menus.map((menu, ind) => (
                     <li key={ind} className="group">
-                      <span className="flex items-center justify-between ">
+                      <span
+                        onClick={() =>
+                          setShowSubMenu((prev) => (prev === ind ? null : ind))
+                        }
+                        className={`flex items-center justify-between ${
+                          showSubMenu === ind && "text-primary"
+                        }  cursor-pointer`}
+                      >
                         <span className="capitalize flex items-center gap-3 py-1 text-lg font-medium cursor-pointer group-hover:text-primary">
                           <menu.icon className="" fill="red" />
                           {menu?.label}
@@ -332,7 +345,7 @@ export default function RootLayout() {
                         )}
                       </span>
 
-                      {menu?.subMenu && (
+                      {menu?.subMenu && showSubMenu === ind && (
                         <div className="flex flex-col border-l border-primary gap-2 my-5 ml-2.5 pl-5">
                           {menu?.subMenu.map((sub, i) => (
                             <span key={i}>
@@ -355,8 +368,16 @@ export default function RootLayout() {
         </div>
 
         {/* main content */}
-        <div>
-          <Outlet></Outlet>
+        <div
+          className={`flex-1 w-full absolute top-27 transition-all duration-500 ease-in-out  ${
+            showSideBar
+              ? "left-77 max-w-[calc(100% - 308px)] lg:left-0 lg:w-full "
+              : "left-0 w-full lg:left-77 lg:max-w-[calc(100% - 308px)] "
+          }  right-0 h-100 `}
+        >
+          <div>
+            <Outlet></Outlet>
+          </div>
         </div>
       </div>
     </div>
