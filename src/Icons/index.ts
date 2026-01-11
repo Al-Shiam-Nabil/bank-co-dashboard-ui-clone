@@ -2,6 +2,8 @@ import Analytics from "../Icons/analytics.svg?react";
 import ArrowUpDown from "../Icons/arrowUpDown.svg?react";
 import Calender from "../Icons/calender.svg?react";
 import ComingSoon from "../Icons/comingSoon.svg?react";
+import DabitCardIcon from "../Icons/dabitCardIcon.svg?react";
+import DarkLogo from "../Icons/darkLogo.svg?react";
 import DashboardHome from "../Icons/dashBoardIcon.svg?react";
 import Error404 from "../Icons/error404.svg?react";
 import FullLogo from "../Icons/fullLogo.svg?react";
@@ -22,6 +24,8 @@ export {
   ArrowUpDown,
   Calender,
   ComingSoon,
+  DabitCardIcon,
+  DarkLogo,
   DashboardHome,
   Error404,
   FullLogo,

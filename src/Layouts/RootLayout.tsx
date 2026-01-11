@@ -9,12 +9,13 @@ import {
   Moon,
   Search,
 } from "lucide-react";
-import { useState } from "react";
-import { Link, Outlet } from "react-router";
+import { useEffect, useState } from "react";
+import { Link, NavLink, Outlet } from "react-router";
 import {
   Analytics,
   Calender,
   ComingSoon,
+  DarkLogo,
   DashboardHome,
   Error404,
   FullLogo,
@@ -35,6 +36,7 @@ export default function RootLayout() {
   const [showSideBar, setShowSideBar] = useState<boolean>(false);
 
   const [showSubMenu, setShowSubMenu] = useState<number | null>(null);
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
   const sideBar = [
     {
@@ -67,12 +69,12 @@ export default function RootLayout() {
         {
           label: "transitions",
           icon: Transition,
-          url: "#",
+          url: "/dashboard/transaction",
         },
         {
           label: "statistics",
           icon: Statistics,
-          url: "#",
+          url: "/dashboard/statistics",
         },
         {
           label: "analytics",
@@ -168,13 +170,24 @@ export default function RootLayout() {
     },
   ];
 
+  useEffect(() => {
+    const html = document.documentElement;
+
+    html.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const handleDark = () => {
+    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+  };
+
   return (
     <div className="relative ">
       {/*  top  bar */}
-      <div className="flex items-center w-full overflow-x-hidden lg:h-27 bg-white fixed z-80">
+      <div className="flex items-center w-full overflow-x-hidden lg:h-27 bg-white dark:bg-[#1D1E24] text-white fixed z-80">
         {/* logo */}
         <div className=" hidden  pl-12.5 shrink-0 w-77 lg:flex justify-between items-center h-full ">
-          <FullLogo />
+          {theme === "dark" ? <DarkLogo /> : <FullLogo />}
 
           <div
             onClick={() => setShowSideBar((prev) => !prev)}
@@ -189,7 +202,9 @@ export default function RootLayout() {
         <div className="w-full h-full flex justify-between items-center lg:gap-5 px-4 md:px-10 2xl:px-19">
           {/* dashboard name */}
           <div className="hidden lg:block">
-            <h3 className="text-[28px] font-bold">Dashbaord</h3>
+            <h3 className="text-[28px] font-bold text-black dark:text-white">
+              Dashbaord
+            </h3>
             <p className="text-dark2 font-sm">Let’s check your update today</p>
           </div>
 
@@ -198,17 +213,17 @@ export default function RootLayout() {
             <input
               type="text"
               placeholder="Search.."
-              className="w-full h-full focus:outline focus:outline-primary  bg-dark4 pl-11.5 px-4 rounded-sm"
+              className="w-full h-full focus:outline focus:outline-primary  bg-dark4 dark:bg-[#23262B] pl-11.5 px-4 rounded-sm"
             />
 
             <Search
               className="absolute top-4.5 left-4"
               size={20}
-              stroke="#1a202c"
+              stroke="gray"
             />
 
-            <div className="absolute top-4.5 right-4 flex items-center text-[#1a202c] gap-1">
-              <Command size={20} stroke="#1a202c" className="" /> K
+            <div className="absolute top-4.5 right-4 flex items-center text-[#1a202c] dark:text-gray-300 gap-1">
+              <Command size={20} stroke="gray" className="" /> K
             </div>
           </div>
 
@@ -216,27 +231,30 @@ export default function RootLayout() {
           <div className="flex items-center gap-8 2xl:gap-12">
             <div className="hidden 2xl:flex gap-5 items-center">
               {/* dark mode */}
-              <div className="w-13 h-13 rounded-xl border border-primary grid place-items-center cursor-pointer ">
-                <Moon />
+              <div
+                onClick={handleDark}
+                className="w-13 h-13 rounded-xl border border-primary grid place-items-center cursor-pointer "
+              >
+                <Moon className="text-[#1a202c] dark:text-white" />
               </div>
 
               {/* notification */}
               <div className="relative w-13 h-13 rounded-xl border border-primary grid place-items-center cursor-pointer ">
-                <BellRing />
+                <BellRing className="text-[#1a202c] dark:text-white" />
 
                 <div className="w-4 h-4 border-3 border-white bg-dark3 rounded-full absolute -right-1 -top-1"></div>
               </div>
 
               {/* message */}
               <div className="relative w-13 h-13 rounded-xl border border-primary grid place-items-center cursor-pointer ">
-                <Mail />
+                <Mail className="text-[#1a202c] dark:text-white" />
 
                 <div className="w-4 h-4 border-3 border-white bg-red-400 rounded-full absolute -right-1 -top-1"></div>
               </div>
 
               {/* gift */}
               <div className="relative w-13 h-13 rounded-xl border border-primary grid place-items-center cursor-pointer ">
-                <Gift />
+                <Gift className="text-[#1a202c] dark:text-white" />
                 <div className="w-4 h-4 border-3 border-white bg-dark3 rounded-full absolute -right-1 -top-1"></div>
               </div>
             </div>
@@ -256,7 +274,7 @@ export default function RootLayout() {
               </div>
 
               <div className="">
-                <p className="font-bold flex gap-3">
+                <p className="font-bold flex gap-3 text-black dark:text-white">
                   John Doe
                   <span>
                     <ChevronDown />
@@ -293,7 +311,7 @@ export default function RootLayout() {
       <div className="flex w-full relative  ">
         {/* left side bar */}
         <div
-          className={`noScrollBar   shrink-0 w-77 h-full overflow-y-auto  bg-white border-t border-dark3/30 fixed  lg:top-27 z-80 lg:z-30 transition-all duration-700 ease-in-out   ${
+          className={`noScrollBar   shrink-0 w-77 h-full overflow-y-auto  bg-white dark:bg-[#1D1E24] dark:text-white border-t border-dark3/30 fixed  lg:top-27 z-80 lg:z-30 transition-transform duration-700 ease-in-out   ${
             showSideBar
               ? "translate-x-0 lg:-translate-x-100 "
               : "-translate-x-100  lg:translate-x-0"
@@ -314,7 +332,7 @@ export default function RootLayout() {
           <ul className="w-full px-12.5 space-y-7 mb-40  absolute top-28 lg:static">
             {sideBar.map((sidebarTitle, index) => (
               <li key={index}>
-                <span className="border-b border-dark3 pb-1 w-full block mt-5 text-dark2 text-sm font-medium capitalize">
+                <span className="border-b border-dark3 dark:border-gray-700 pb-1 w-full block mt-5 text-dark2 text-sm font-medium capitalize">
                   {sidebarTitle?.title}
                 </span>
 
@@ -329,10 +347,13 @@ export default function RootLayout() {
                           showSubMenu === ind && "text-primary"
                         }  cursor-pointer`}
                       >
-                        <span className="capitalize flex items-center gap-3 py-1 text-lg font-medium cursor-pointer group-hover:text-primary">
+                        <NavLink
+                          to={menu?.url}
+                          className={`capitalize w-full flex items-center gap-3 py-1 text-lg font-medium cursor-pointer group-hover:text-primary`}
+                        >
                           <menu.icon className="" fill="red" />
                           {menu?.label}
-                        </span>
+                        </NavLink>
 
                         {/* sub menus */}
                         {menu?.subMenu && (
@@ -346,12 +367,12 @@ export default function RootLayout() {
                       </span>
 
                       {menu?.subMenu && showSubMenu === ind && (
-                        <div className="flex flex-col border-l border-primary gap-2 my-5 ml-2.5 pl-5">
+                        <div className="flex flex-col border-l border-primary  gap-2 my-5 ml-2.5 pl-5">
                           {menu?.subMenu.map((sub, i) => (
                             <span key={i}>
                               <Link
                                 to={sub?.url}
-                                className="capitalize text-base text-dark2 font-medium inline hover:text-black trasition duration-200 ease-in-out"
+                                className="capitalize text-base text-dark2 dark:text-white font-medium inline hover:text-black dark:hover:text-white/70 trasition duration-200 ease-in-out"
                               >
                                 {sub?.label}
                               </Link>
@@ -375,7 +396,7 @@ export default function RootLayout() {
               : "left-0 w-full lg:left-77 lg:max-w-[calc(100% - 308px)] "
           }  right-0 h-100 `}
         >
-          <div>
+          <div className="pb-5">
             <Outlet></Outlet>
           </div>
         </div>

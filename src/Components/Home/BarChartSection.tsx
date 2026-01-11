@@ -1,4 +1,3 @@
-import { ChevronDown } from "lucide-react";
 import {
   Bar,
   BarChart,
@@ -8,6 +7,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import GenarelDropdownComponent from "../Ui/GenarelDropdownComponent";
 
 const data = [
   { month: "Jan", total: 8 },
@@ -25,9 +25,21 @@ const data = [
 ];
 
 export default function BarChartSection() {
+  const dropdownInfo = [
+    {
+      data: "Jan 10 - Jan 16",
+    },
+    {
+      data: "Jan 10 - Jan 16",
+    },
+    {
+      data: "Jan 10 - Jan 16",
+    },
+  ];
+
   return (
-    <div className="py-3 pr-6 bg-white rounded-lg">
-      <div className="flex justify-between mb-3 pb-1.5 ml-6 border-b border-dark3">
+    <div className="py-3 pr-6 bg-white dark:bg-[#1D1E24] dark:text-white rounded-lg">
+      <div className="flex justify-between mb-3 pb-1.5 ml-6 border-b border-dark3 dark:border-gray-700">
         <h3 className="text-2xl font-bold">Revenue Flow</h3>
         {/* status */}
         <div className="flex items-center gap-8 text-sm">
@@ -47,7 +59,7 @@ export default function BarChartSection() {
         </div>
 
         {/* date */}
-        <div className="bg-dark4 rounded-lg py-2 px-3 cursor-pointer">
+        {/* <div className="bg-dark4 rounded-lg py-2 px-3 cursor-pointer">
           <div>
             <p className="flex items-center gap-1">
               Jan 10 - Jan 16{" "}
@@ -57,7 +69,12 @@ export default function BarChartSection() {
               </span>
             </p>
           </div>
-        </div>
+        </div> */}
+
+        <GenarelDropdownComponent
+          dropdownInfo={dropdownInfo}
+          title="Jan 10 - Jan 16"
+        />
       </div>
 
       <div style={{ width: "100%", height: 320 }}>

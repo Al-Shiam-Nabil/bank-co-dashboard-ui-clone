@@ -1,14 +1,13 @@
 import BarChartSection from "../../Components/Home/BarChartSection";
 import EffeciencyPiChart from "../../Components/Home/EffeciencyPiChart";
-import StatesticTotal from "../../Components/Home/StatesticTotal";
-import ChattingComponent from "../../Components/Ui/ChattingComponent";
+import CalenderComponent from "../../Components/Ui/CalenderComponent";
 import MyWalletComponent from "../../Components/Ui/MyWalletComponent";
 import TableComponent from "../../Components/Ui/TableComponent";
 import Customer1 from "../../assets/customer1.png";
 import Customer2 from "../../assets/customer2.png";
 import Customer3 from "../../assets/customer3.png";
 
-function HomePage() {
+export default function StatisticsPage() {
   const statesticTotalArray = [
     {
       title: "Total earnings",
@@ -60,50 +59,38 @@ function HomePage() {
   ];
 
   return (
-    <>
-      <div className="grid grid-cols-12 gap-8 m-12">
-        {/* left */}
-        <div className="col-span-9 space-y-8">
-          <div className="grid grid-cols-3 gap-5">
-            {statesticTotalArray.map((statestic, index) => (
-              <StatesticTotal
-                key={index}
-                statestic={statestic}
-              ></StatesticTotal>
-            ))}
+    <div className="grid grid-cols-12 gap-8 m-12">
+      {/* left */}
+      <div className="col-span-9 space-y-8">
+        {/* rechart */}
+
+        <div className=" grid  grid-cols-3 gap-5">
+          <div className="col-span-2">
+            <BarChartSection />
           </div>
+          {/* pi chart */}
 
-          {/* rechart */}
-
-          <div className=" grid  grid-cols-3 gap-5 mt-8">
-            <div className="col-span-2">
-              <BarChartSection />
-            </div>
-            {/* pi chart */}
-
-            <div className="col-span-1">
-              <EffeciencyPiChart effeciencyObj={effeciencyObj} />
-            </div>
-          </div>
-
-          {/*table */}
-
-          <div className="col-span-full mb-12">
-            <TableComponent tableData={tableData} />
+          <div className="col-span-1">
+            <EffeciencyPiChart effeciencyObj={effeciencyObj} />
           </div>
         </div>
 
-        {/* right */}
-        <div
-          className="col-span-3
-    "
-        >
-          <MyWalletComponent />
-          <ChattingComponent />
+        {/*table */}
+
+        <div className="col-span-full mb-12">
+          <TableComponent tableData={tableData} />
         </div>
       </div>
-    </>
+
+      {/* right */}
+      <div
+        className="col-span-3
+      "
+      >
+        <MyWalletComponent />
+
+        <CalenderComponent />
+      </div>
+    </div>
   );
 }
-
-export default HomePage;

@@ -13,9 +13,8 @@ type StatesticProps = {
 };
 
 export default function StatesticTotal({ statestic }: StatesticProps) {
-  console.log(statestic);
   return (
-    <div className="bg-white rounded-lg p-5 space-y-4">
+    <div className="bg-white dark:bg-[#1D1E24] dark:text-white rounded-lg p-5 space-y-4">
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-2">
           <img src={MoneyBagImage} alt="" />

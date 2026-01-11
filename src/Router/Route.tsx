@@ -2,6 +2,8 @@ import { createBrowserRouter } from "react-router";
 
 import RootLayout from "../Layouts/RootLayout";
 import HomePage from "../Pages/Home/HomePage";
+import StatisticsPage from "../Pages/Statistics/StatisticsPage";
+import TransactionPage from "../Pages/Transaction/TransactionPage";
 
 const router = createBrowserRouter([
   {
@@ -11,6 +13,14 @@ const router = createBrowserRouter([
       {
         index: true,
         Component: HomePage,
+      },
+      {
+        path: "transaction",
+        Component: TransactionPage,
+      },
+      {
+        path: "statistics",
+        Component: StatisticsPage,
       },
     ],
   },

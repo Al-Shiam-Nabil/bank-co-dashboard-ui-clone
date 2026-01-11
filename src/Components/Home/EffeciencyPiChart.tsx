@@ -1,5 +1,6 @@
-import { ArrowUpDown, ChevronDown } from "lucide-react";
+import { ArrowUpDown } from "lucide-react";
 import { Cell, Pie, PieChart, ResponsiveContainer } from "recharts";
+import GenarelDropdownComponent from "../Ui/GenarelDropdownComponent";
 
 const data = [
   { value: 20, color: "#22c55e" },
@@ -50,20 +51,39 @@ type EffeciencyTypeProps = {
 export default function EffeciencyPiChart({
   effeciencyObj,
 }: EffeciencyTypeProps) {
-  console.log(effeciencyObj);
+  const dropdownInfo = [
+    {
+      data: "January",
+    },
+    {
+      data: "february",
+    },
+    {
+      data: "March",
+    },
+    {
+      data: "April",
+    },
+  ];
   return (
-    <div className="bg-white rounded-lg h-full  space-y-3">
-      <div className="flex justify-between items-center border-b border-dark3 py-3 px-5">
+    <div className="bg-white dark:bg-[#1D1E24] dark:text-white rounded-lg h-full  space-y-3">
+      <div className="flex justify-between items-center border-b border-dark3 dark:border-gray-700 py-2 px-5">
         <h3 className="text-xl font-bold">Effeciency</h3>
 
-        <div className="cursor-pointer py-1">
+        {/* <div className="cursor-pointer py-1">
           <p className="flex items-center gap-1 font-semibold">
             Monthly
             <span>
               <ChevronDown size={16} />
             </span>
           </p>
-        </div>
+        </div> */}
+
+        <GenarelDropdownComponent
+          dropdownInfo={dropdownInfo}
+          title="Monthly"
+          titleClass=" font-semibold "
+        />
       </div>
 
       <div className="flex items-center gap-10 py-3 px-8">
@@ -111,7 +131,7 @@ export default function EffeciencyPiChart({
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-3">
             <span className="w-2.5 h-2.5 rounded-full block bg-green-400"></span>{" "}
-            <p className="text-dark2 font-medium">Goal</p>
+            <p className="text-dark2 dark:text-white font-semibold">Goal</p>
           </div>
           <p className="font-bold">{effeciencyObj?.goal}</p>
         </div>
@@ -119,7 +139,7 @@ export default function EffeciencyPiChart({
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-3">
             <span className="w-2.5 h-2.5 rounded-full block bg-yellow-400"></span>{" "}
-            <p className="text-dark2 font-medium">Spending</p>
+            <p className="text-dark2 dark:text-white font-semibold">Spending</p>
           </div>
           <p className="font-bold">{effeciencyObj?.spendingPercentage}</p>
         </div>
@@ -127,7 +147,7 @@ export default function EffeciencyPiChart({
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-3">
             <span className="w-2.5 h-2.5 rounded-full block bg-dark3"></span>{" "}
-            <p className="text-dark2 font-medium">Others</p>
+            <p className="text-dark2 dark:text-white font-semibold">Others</p>
           </div>
           <p className="font-bold">{effeciencyObj?.others}</p>
         </div>
