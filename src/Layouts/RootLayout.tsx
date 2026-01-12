@@ -84,7 +84,7 @@ export default function RootLayout() {
         {
           label: "my wallet",
           icon: MyWallet,
-          url: "#",
+          url: "/dashboard/myWallet",
         },
         {
           label: "inbox",
@@ -96,13 +96,13 @@ export default function RootLayout() {
         {
           label: "intigration",
           icon: Integrations,
-          url: "#",
+          url: "/dashboard/integrations",
         },
         ,
         {
           label: "user",
           icon: User,
-          url: "#",
+          url: "/dashboard/user",
         },
         ,
         {
@@ -140,13 +140,13 @@ export default function RootLayout() {
         {
           label: "signin",
           icon: User,
-          url: "#",
+          url: "/signin",
         },
         ,
         {
           label: "signup",
           icon: User,
-          url: "#",
+          url: "signup",
         },
         ,
         {

@@ -7,7 +7,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import GenarelDropdownComponent from "../Ui/GenarelDropdownComponent";
+import ChartComponent from "../Ui/ChartComponent";
 
 const data = [
   { month: "Jan", total: 8 },
@@ -38,45 +38,11 @@ export default function BarChartSection() {
   ];
 
   return (
-    <div className="py-3 pr-6 bg-white dark:bg-[#1D1E24] dark:text-white rounded-lg">
-      <div className="flex justify-between mb-3 pb-1.5 ml-6 border-b border-dark3 dark:border-gray-700">
-        <h3 className="text-2xl font-bold">Revenue Flow</h3>
-        {/* status */}
-        <div className="flex items-center gap-8 text-sm">
-          <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-yellow-400 block"></span>{" "}
-            Pending
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-green-500 block"></span>{" "}
-            Signed
-          </div>
-
-          <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-orange-400 block"></span>{" "}
-            Last
-          </div>
-        </div>
-
-        {/* date */}
-        {/* <div className="bg-dark4 rounded-lg py-2 px-3 cursor-pointer">
-          <div>
-            <p className="flex items-center gap-1">
-              Jan 10 - Jan 16{" "}
-              <span>
-                {" "}
-                <ChevronDown size={16} />
-              </span>
-            </p>
-          </div>
-        </div> */}
-
-        <GenarelDropdownComponent
-          dropdownInfo={dropdownInfo}
-          title="Jan 10 - Jan 16"
-        />
-      </div>
-
+    <ChartComponent
+      dropdownInfo={dropdownInfo}
+      title="Revenue Flow
+"
+    >
       <div style={{ width: "100%", height: 320 }}>
         <ResponsiveContainer>
           <BarChart data={data} barCategoryGap={24}>
@@ -137,6 +103,6 @@ export default function BarChartSection() {
           </BarChart>
         </ResponsiveContainer>
       </div>
-    </div>
+    </ChartComponent>
   );
 }
