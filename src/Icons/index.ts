@@ -28,6 +28,7 @@ import Statistics from "../Icons/statistics.svg?react";
 import Support from "../Icons/support.svg?react";
 import Transition from "../Icons/transation.svg?react";
 import Trelo from "../Icons/trelo.svg?react";
+import UndoIcon from "../Icons/undoIcon.svg?react";
 import User from "../Icons/user.svg?react";
 import Zoom from "../Icons/Zoom.svg?react";
 
@@ -61,6 +62,7 @@ export {
   Support,
   Transition,
   Trelo,
+  UndoIcon,
   User,
   Zoom,
 };

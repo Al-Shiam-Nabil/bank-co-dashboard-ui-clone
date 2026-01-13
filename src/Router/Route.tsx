@@ -2,12 +2,16 @@ import { createBrowserRouter } from "react-router";
 
 import RootLayout from "../Layouts/RootLayout";
 import SignLayout from "../Layouts/SignLayout";
+import CalenderPage from "../Pages/CalenderPage/CalenderPage";
+import HistoryPage from "../Pages/History/HistoryPage";
 import HomePage from "../Pages/Home/HomePage";
+import Inbox from "../Pages/Inbox/Inbox";
 import IntegrationsPage from "../Pages/Integrations/IntegrationsPage";
 import MyWallet from "../Pages/MyWallet/MyWallet";
 import SigninPage from "../Pages/Sign/SigninPage";
 import SignupPage from "../Pages/Sign/SignupPage";
 import StatisticsPage from "../Pages/Statistics/StatisticsPage";
+import SupportPage from "../Pages/Support/SupportPage";
 import TransactionPage from "../Pages/Transaction/TransactionPage";
 import UserPage from "../Pages/User/UserPage";
 
@@ -39,6 +43,22 @@ const router = createBrowserRouter([
       {
         path: "user",
         Component: UserPage,
+      },
+      {
+        path: "inbox",
+        Component: Inbox,
+      },
+      {
+        path: "calender",
+        Component: CalenderPage,
+      },
+      {
+        path: "history",
+        Component: HistoryPage,
+      },
+      {
+        path: "support",
+        Component: SupportPage,
       },
     ],
   },

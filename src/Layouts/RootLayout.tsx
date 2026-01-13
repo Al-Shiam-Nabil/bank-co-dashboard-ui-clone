@@ -89,7 +89,7 @@ export default function RootLayout() {
         {
           label: "inbox",
           icon: Notification,
-          url: "#",
+          url: "/dashboard/inbox",
         },
 
         ,
@@ -108,13 +108,13 @@ export default function RootLayout() {
         {
           label: "calender",
           icon: Calender,
-          url: "#",
+          url: "/dashboard/calender",
         },
         ,
         {
           label: "history",
           icon: History,
-          url: "#",
+          url: "/dashboard/history",
         },
       ],
     },
@@ -124,7 +124,7 @@ export default function RootLayout() {
         {
           label: "support",
           icon: Support,
-          url: "#",
+          url: "/dashboard/support",
         },
         ,
         {
@@ -311,9 +311,9 @@ export default function RootLayout() {
       <div className="flex w-full relative  ">
         {/* left side bar */}
         <div
-          className={`noScrollBar   shrink-0 w-77 h-full overflow-y-auto  bg-white dark:bg-[#1D1E24] dark:text-white border-t border-dark3/30 fixed  lg:top-27 z-80 lg:z-30 transition-transform duration-700 ease-in-out   ${
+          className={`noScrollBar w-77   shrink-0  h-full overflow-y-auto  bg-white dark:bg-[#1D1E24] dark:text-white border-t border-dark3/30 fixed  lg:top-27 z-80 lg:z-30 transition-transform duration-700 ease-in-out   ${
             showSideBar
-              ? "translate-x-0 lg:-translate-x-100 "
+              ? "translate-x-0 lg:-translate-x-100 w-0"
               : "-translate-x-100  lg:translate-x-0"
           } `}
         >
@@ -390,13 +390,13 @@ export default function RootLayout() {
 
         {/* main content */}
         <div
-          className={`flex-1 w-full absolute top-27 transition-all duration-500 ease-in-out  ${
+          className={`flex-1  absolute top-27 transition-all duration-500 ease-in-out ${
             showSideBar
-              ? "left-77 max-w-[calc(100% - 308px)] lg:left-0 lg:w-full "
-              : "left-0 w-full lg:left-77 lg:max-w-[calc(100% - 308px)] "
-          }  right-0 h-100 `}
+              ? "left-77 max-w-[calc(100%+308px)] lg:left-0 lg:w-full "
+              : "left-0 w-full  lg:left-77 lg:max-w-[calc(100%-308px)] "
+          }  right-0  `}
         >
-          <div className="pb-5">
+          <div className="">
             <Outlet></Outlet>
           </div>
         </div>
