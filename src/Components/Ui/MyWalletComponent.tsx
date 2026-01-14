@@ -66,16 +66,6 @@ export default function MyWalletComponent() {
       <div>
         <h3 className="text-lg font-bold my-6">Quick Transfer</h3>
 
-        {/* <div className="text-sm flex justify-between items-center h-14 px-5 border border-dark3 rounded-lg cursor-pointer">
-          <div className="flex items-center gap-2">
-            <DabitCardIcon /> Debit
-          </div>
-
-          <div className="flex items-center gap-2 font-bold">
-            $10.43 <ChevronDown size={16} stroke="#A0AEC0" />
-          </div>
-        </div> */}
-
         <GenarelDropdownComponent dropdownInfo={dropdownInfo}>
           <div className="text-sm flex justify-between items-center h-14 px-5 border border-dark3 dark:border-gray-700 rounded-lg cursor-pointer">
             <div className="flex items-center gap-2">

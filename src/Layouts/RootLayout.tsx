@@ -130,7 +130,7 @@ export default function RootLayout() {
         {
           label: "setting",
           icon: Setting,
-          url: "#",
+          url: "/dashboard/settings",
         },
       ],
     },

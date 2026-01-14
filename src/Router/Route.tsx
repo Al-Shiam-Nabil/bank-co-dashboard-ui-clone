@@ -8,6 +8,7 @@ import HomePage from "../Pages/Home/HomePage";
 import Inbox from "../Pages/Inbox/Inbox";
 import IntegrationsPage from "../Pages/Integrations/IntegrationsPage";
 import MyWallet from "../Pages/MyWallet/MyWallet";
+import SettingPage from "../Pages/SettingPage/SettingPage";
 import SigninPage from "../Pages/Sign/SigninPage";
 import SignupPage from "../Pages/Sign/SignupPage";
 import StatisticsPage from "../Pages/Statistics/StatisticsPage";
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
       {
         path: "support",
         Component: SupportPage,
+      },
+      {
+        path: "settings",
+        Component: SettingPage,
       },
     ],
   },

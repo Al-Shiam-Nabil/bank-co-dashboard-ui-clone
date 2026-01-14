@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80px" height="80px">
+                          <circle style="
+                              stroke-dashoffset: calc(215 - 215 * (64 / 100));
+                            " cx="40" cy="40" r="35" stroke-linecap="round"></circle>
+                        </svg>

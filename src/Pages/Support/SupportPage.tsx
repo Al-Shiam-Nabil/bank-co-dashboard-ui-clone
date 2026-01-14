@@ -2,7 +2,11 @@ import {
   ChevronDown,
   ChevronLeft,
   Ellipsis,
+  LoaderCircle,
+  Mail,
+  MapPin,
   MessageSquare,
+  Phone,
   Printer,
   Star,
 } from "lucide-react";
@@ -278,9 +282,106 @@ export default function SupportPage() {
 
       {/* right section*/}
       <div
-        className="col-span-3
+        className="col-span-3 space-y-10
       "
-      ></div>
+      >
+        <div className="bg-white rounded-lg p-8">
+          <div className="border-b border-dark3">
+            <h3 className="text-xl font-bold">Customer</h3>
+            <div className="flex items-center justify-between my-6">
+              <div className="flex items-center justify-center gap-4">
+                <img src={User1} alt="" />
+                <div>
+                  <p className="font-semibold">Darcel Ballentine</p>
+                  <p className="text-sm text-dark2 font-medium">10 orders</p>
+                </div>
+              </div>
+              <Mail stroke="#22C55E" />
+            </div>
+          </div>
+
+          {/* contact info */}
+          <div className="pb-8 mt-5 space-y-4 border-b border-dark3">
+            <div className="flex items-center justify-between mb-5">
+              <h4 className="font-bold">Contact Information</h4>
+              <p className="text-primary text-sm font-medium cursor-pointer">
+                Edit
+              </p>
+            </div>
+
+            <div className="flex items-center gap-4 text-dark2 font-medium">
+              <Mail size={20} />
+              <p>markparker@mail.com</p>
+            </div>
+
+            <div className="flex items-center gap-4 text-dark2 font-medium">
+              <Phone size={20} />
+              <p>(671) 555-0110</p>
+            </div>
+          </div>
+
+          {/* shipping address */}
+          <div className="pb-8 mt-5 space-y-4 border-b border-dark3">
+            <div className="flex items-center justify-between mb-5">
+              <h4 className="font-bold">Shipping Address</h4>
+              <p className="text-primary text-sm font-medium cursor-pointer">
+                Edit
+              </p>
+            </div>
+
+            <div className="flex items-center gap-3 text-dark2">
+              <MapPin size={20} />
+              <p>2715 Ash Dr. San Jose, South Dakota 83475</p>
+            </div>
+          </div>
+
+          {/* present address */}
+          <div className="pb-8 mt-5 space-y-4 ">
+            <div className="flex items-center justify-between mb-5">
+              <h4 className="font-bold">Present Address</h4>
+              <p className="text-primary text-sm font-medium cursor-pointer">
+                Edit
+              </p>
+            </div>
+
+            <div className="flex items-center gap-3 text-dark2">
+              <MapPin size={20} />
+              <p>2715 Ash Dr. San Jose, South Dakota 83475</p>
+            </div>
+          </div>
+        </div>
+
+        {/* note */}
+        <div className="bg-white rounded-lg p-8">
+          <div className="flex items-center justify-between mb-5">
+            <h4 className="font-bold">Note</h4>
+            <p className="text-primary text-sm font-medium cursor-pointer">
+              Edit
+            </p>
+          </div>
+          <p className="text-dark2 font-medium">No notes from customer.</p>
+        </div>
+
+        {/* completed pr5ofile */}
+
+        <div className="p-8 rounded-lg bg-[#EDF2F7]">
+          <div className="flex items-center gap-4">
+            <LoaderCircle size={50} stroke="#22C55E" />
+
+            <div>
+              <div className="space-y-1">
+                <h3 className="font-bold ">Complete profile</h3>
+                <p className="text-sm text-dark2 font-medium">
+                  Complete your profile to unlock all features
+                </p>
+              </div>
+            </div>
+          </div>
+          <button className="bg-primary text-sm font-semibold rounded-lg text-white py-3 w-full mt-5">
+            Verify Identity
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
