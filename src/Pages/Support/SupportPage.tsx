@@ -20,22 +20,22 @@ export default function SupportPage() {
       <div className="col-span-9 space-y-8">
         <div className="flex justify-between items-center">
           {/* left */}
-          <button className="flex items-center bg-white p-4 rounded-lg text-dark2 border border-transparent cursor-pointer hover:border-primary transition-all duration-300 ease-in-out">
+          <button className="flex items-center bg-white dark:bg-[#1D1E24] dark:text-white p-4 rounded-lg text-dark2 border border-transparent cursor-pointer hover:border-primary transition-all duration-300 ease-in-out">
             <ChevronLeft stroke="#A0AEC0" />
             Support Details
           </button>
 
           {/* right */}
           <div className="flex items-center gap-5">
-            <button className="flex items-center bg-white p-4 rounded-lg text-dark2 gap-2 border border-transparent cursor-pointer hover:border-primary transition-all duration-300 ease-in-out">
+            <button className="flex items-center bg-white dark:bg-[#1D1E24] dark:text-white p-4 rounded-lg text-dark2 gap-2 border border-transparent cursor-pointer hover:border-primary transition-all duration-300 ease-in-out">
               <Printer stroke="#A0AEC0" size={20} />
               Print order
             </button>
-            <button className="flex items-center gap-2 bg-white p-4 rounded-lg text-dark2 border border-transparent cursor-pointer hover:border-primary transition-all duration-300 ease-in-out">
+            <button className="flex items-center gap-2 bg-white dark:bg-[#1D1E24] dark:text-white p-4 rounded-lg text-dark2 border border-transparent cursor-pointer hover:border-primary transition-all duration-300 ease-in-out">
               <UndoIcon stroke="#A0AEC0" />
               Refund amount
             </button>
-            <button className="flex gap-2 items-center bg-white p-4 rounded-lg text-dark2 border border-transparent cursor-pointer hover:border-primary transition-all duration-300 ease-in-out">
+            <button className="flex gap-2 items-center bg-white dark:bg-[#1D1E24] dark:text-white p-4 rounded-lg text-dark2 border border-transparent cursor-pointer hover:border-primary transition-all duration-300 ease-in-out">
               More actions
               <ChevronDown size={18} stroke="#A0AEC0" />
             </button>
@@ -43,44 +43,50 @@ export default function SupportPage() {
         </div>
 
         {/* main content */}
-        <div className="grid grid-cols-2 gap-12 py-8 px-6 bg-white rounded-lg">
+        <div className="grid grid-cols-2 gap-12 py-8 px-6 bg-white dark:bg-[#1D1E24] dark:text-white rounded-lg">
           {/* left */}
           <div className="">
             <form className="space-y-5">
               <div className="flex items-center gap-8">
                 <div className="flex flex-col gap-2 w-full">
-                  <label className="font-medium text-dark2">First Name</label>
+                  <label className="font-medium text-dark2 dark:text-white">
+                    First Name
+                  </label>
                   <input
                     type="text"
-                    className="h-14 px-4 bg-dark4 rounded-lg w-full shrink-0 focus:outline focus:outline-primary"
+                    className="h-14 px-4 bg-dark4 dark:bg-[#23262B] dark:text-white rounded-lg w-full shrink-0 focus:outline focus:outline-primary"
                   />
                 </div>
 
                 <div className="flex flex-col gap-2 w-full">
-                  <label className="font-medium text-dark2">Last Name</label>
+                  <label className="font-medium text-dark2 dark:text-white">
+                    Last Name
+                  </label>
                   <input
                     type="text"
-                    className="h-14 px-4 bg-dark4 rounded-lg  w-full shrink-0 focus:outline focus:outline-primary"
+                    className="h-14 px-4 bg-dark4 dark:bg-[#23262B] dark:text-white rounded-lg  w-full shrink-0 focus:outline focus:outline-primary"
                   />
                 </div>
               </div>
 
               <div className="flex items-center gap-8">
                 <div className="flex flex-col gap-2 w-full">
-                  <label className="font-medium text-dark2">Email</label>
+                  <label className="font-medium text-dark2 dark:text-white">
+                    Email
+                  </label>
                   <input
                     type="email"
-                    className="h-14 px-4 bg-dark4 rounded-lg w-full shrink-0 focus:outline focus:outline-primary"
+                    className="h-14 px-4 bg-dark4 dark:bg-[#23262B] dark:text-white rounded-lg w-full shrink-0 focus:outline focus:outline-primary"
                   />
                 </div>
 
                 <div className="flex flex-col gap-2 w-full">
-                  <label className="font-medium text-dark2">
+                  <label className="font-medium text-dark2 dark:text-white">
                     Phone Number (Optional)
                   </label>
                   <input
                     type="text"
-                    className="h-14 px-4 bg-dark4 rounded-lg  w-full shrink-0 focus:outline focus:outline-primary"
+                    className="h-14 px-4 bg-dark4 dark:bg-[#23262B] dark:text-white rounded-lg  w-full shrink-0 focus:outline focus:outline-primary"
                   />
                 </div>
               </div>
@@ -90,14 +96,14 @@ export default function SupportPage() {
                 <label className="font-semibold">Title</label>
                 <input
                   type="email"
-                  className="h-14 px-4 bg-dark4 rounded-lg w-full shrink-0 focus:outline focus:outline-primary"
+                  className="h-14 px-4 bg-dark4 dark:bg-[#23262B] dark:text-white rounded-lg w-full shrink-0 focus:outline focus:outline-primary"
                 />
               </div>
 
               <div className="flex flex-col gap-2 w-full">
                 <label className="font-semibold">Description</label>
 
-                <textarea className="h-45 px-4 resize-none bg-dark4 rounded-lg w-full shrink-0 focus:outline focus:outline-primary"></textarea>
+                <textarea className="h-45 px-4 resize-none bg-dark4 dark:bg-[#23262B] dark:text-white rounded-lg w-full shrink-0 focus:outline focus:outline-primary"></textarea>
               </div>
 
               <div className="flex items-center justify-end">
@@ -119,22 +125,22 @@ export default function SupportPage() {
                 Your inbox
               </button>
 
-              <button className="px-4 py-3 border-2 border-dark3  font-medium rounded-lg cursor-pointer">
+              <button className="px-4 py-3 border-2 border-dark3 dark:border-primary  font-medium rounded-lg cursor-pointer">
                 Done
               </button>
 
-              <button className="px-4 py-3 border-2 border-dark3  font-medium rounded-lg cursor-pointer">
+              <button className="px-4 py-3 border-2 border-dark3 dark:border-primary  font-medium rounded-lg cursor-pointer">
                 Saved
               </button>
             </div>
 
             {/* recent support  */}
-            <div className="py-8 px-6 border border-dark3 rounded-lg mt-5">
+            <div className="py-8 px-6 border border-dark3 dark:border-gray-700 rounded-lg mt-5">
               <h3 className="text-lg font-medium">Recent Support</h3>
 
               {/* card container */}
               <div className="mt-5 space-y-3">
-                <div className=" flex gap-5 px-4 py-8 rounded-lg">
+                <div className=" flex gap-5 px-4 py-8 rounded-lg ">
                   <div>
                     <img
                       src={User1}
@@ -143,15 +149,15 @@ export default function SupportPage() {
                     />
                   </div>
                   <div className="space-y-2">
-                    <h4 className="text-sm font-semibold text-dark2">
+                    <h4 className="text-sm font-semibold text-dark2 dark:text-white">
                       Joel Becker <span>12h</span>
                     </h4>
 
-                    <h3 className="text-dark2 font-semibold">
+                    <h3 className="text-dark2 font-semibold dark:text-white">
                       When is the Sketch version available for download?
                     </h3>
 
-                    <p className="text-sm text-dark2 my-4">
+                    <p className="text-sm text-dark2 my-4 dark:text-white">
                       "Love this so much! What tools do you use to create your
                       3d illustrations?"
                     </p>
@@ -233,15 +239,15 @@ export default function SupportPage() {
                     />
                   </div>
                   <div className="space-y-2">
-                    <h4 className="text-sm font-semibold text-dark2">
+                    <h4 className="text-sm font-semibold text-dark2 dark:text-white">
                       Joel Becker <span>12h</span>
                     </h4>
 
-                    <h3 className="text-dark2 font-semibold">
+                    <h3 className="text-dark2 font-semibold dark:text-white">
                       When is the Sketch version available for download?
                     </h3>
 
-                    <p className="text-sm text-dark2 my-4">
+                    <p className="text-sm text-dark2 my-4 dark:text-white">
                       "Love this so much! What tools do you use to create your
                       3d illustrations?"
                     </p>
@@ -270,7 +276,7 @@ export default function SupportPage() {
                 </div>
 
                 <div className="grid place-items-center">
-                  <button className="text-sm font-semibold border border-black cursor-pointer transition-all duration-300 ease-in-out text-white hover:bg-white hover:text-black bg-black rounded-xl py-4 px-14">
+                  <button className="text-sm font-semibold border border-black dark:bg-white dark:text-black dark:border-white dark:hover:bg-black dark:hover:text-white cursor-pointer transition-all duration-300 ease-in-out text-white hover:bg-white hover:text-black bg-black rounded-xl py-4 px-14">
                     Load More
                   </button>
                 </div>
@@ -285,8 +291,8 @@ export default function SupportPage() {
         className="col-span-3 space-y-10
       "
       >
-        <div className="bg-white rounded-lg p-8">
-          <div className="border-b border-dark3">
+        <div className="bg-white dark:bg-[#1D1E24] dark:text-white rounded-lg p-8">
+          <div className="border-b border-dark3 dark:border-gray-700">
             <h3 className="text-xl font-bold">Customer</h3>
             <div className="flex items-center justify-between my-6">
               <div className="flex items-center justify-center gap-4">
@@ -301,7 +307,7 @@ export default function SupportPage() {
           </div>
 
           {/* contact info */}
-          <div className="pb-8 mt-5 space-y-4 border-b border-dark3">
+          <div className="pb-8 mt-5 space-y-4 border-b border-dark3 dark:border-gray-700">
             <div className="flex items-center justify-between mb-5">
               <h4 className="font-bold">Contact Information</h4>
               <p className="text-primary text-sm font-medium cursor-pointer">
@@ -321,7 +327,7 @@ export default function SupportPage() {
           </div>
 
           {/* shipping address */}
-          <div className="pb-8 mt-5 space-y-4 border-b border-dark3">
+          <div className="pb-8 mt-5 space-y-4 border-b border-dark3 dark:border-gray-700">
             <div className="flex items-center justify-between mb-5">
               <h4 className="font-bold">Shipping Address</h4>
               <p className="text-primary text-sm font-medium cursor-pointer">
@@ -352,7 +358,7 @@ export default function SupportPage() {
         </div>
 
         {/* note */}
-        <div className="bg-white rounded-lg p-8">
+        <div className="bg-white dark:bg-[#1D1E24] dark:text-white rounded-lg p-8">
           <div className="flex items-center justify-between mb-5">
             <h4 className="font-bold">Note</h4>
             <p className="text-primary text-sm font-medium cursor-pointer">
@@ -364,7 +370,7 @@ export default function SupportPage() {
 
         {/* completed pr5ofile */}
 
-        <div className="p-8 rounded-lg bg-[#EDF2F7]">
+        <div className="p-8 rounded-lg bg-[#EDF2F7] dark:bg-[#1D1E24] dark:text-white">
           <div className="flex items-center gap-4">
             <LoaderCircle size={50} stroke="#22C55E" />
 

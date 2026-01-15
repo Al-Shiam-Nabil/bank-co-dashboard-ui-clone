@@ -1,7 +1,9 @@
 import {
   BellDot,
   CircleQuestionMark,
+  ClipboardList,
   CreditCard,
+  LockKeyhole,
   NotebookText,
   User,
 } from "lucide-react";
@@ -12,6 +14,8 @@ import FAQ from "../../Components/SettingsComponent/FAQ";
 import PaymentMethod from "../../Components/SettingsComponent/PaymentMethod";
 import PersonalInformation from "../../Components/SettingsComponent/PersonalInformation";
 import ProgramResourses from "../../Components/SettingsComponent/ProgramResourses";
+import Security from "../../Components/SettingsComponent/Security";
+import TermsConditions from "../../Components/SettingsComponent/TermsConditions";
 
 export default function SettingPage() {
   const [showIndex, setShowIndex] = useState<number>(0); //
@@ -48,14 +52,28 @@ export default function SettingPage() {
 
       component: FAQ,
     },
+    {
+      title: "Security",
+      subTitle: "Est arcu pharetra proin pellentesque",
+      icon: LockKeyhole,
+
+      component: Security,
+    },
+    {
+      title: "Terms & Conditions",
+      subTitle: "Est arcu pharetra proin pellentesque",
+      icon: ClipboardList,
+
+      component: TermsConditions,
+    },
   ];
 
   const MyComponent = settingsArr[showIndex].component;
   return (
     <>
-      <div className="grid grid-cols-12 bg-white rounded-lg m-12">
+      <div className="grid grid-cols-12 bg-white dark:bg-[#1D1E24] dark:text-white rounded-lg m-12">
         {/* left section */}
-        <div className="col-span-3 py-6 px-4 border-r border-dark3">
+        <div className="col-span-3 py-6 px-4 border-r border-dark3 dark:border-gray-700">
           {settingsArr.map((setting, index: number) => {
             const isActive = showIndex === index;
             return (
@@ -63,14 +81,14 @@ export default function SettingPage() {
                 key={index}
                 onClick={() => setShowIndex(index)}
                 className={`flex ${
-                  isActive && "bg-[#F7FAFC]"
+                  isActive && "bg-[#F7FAFC] dark:bg-[#23262B]"
                 } items-center gap-3 p-4 rounded-lg cursor-pointer`}
               >
                 <div
                   className={`${
                     isActive
                       ? "bg-primary text-white"
-                      : "bg-[#F7FAFC] text-gray-500"
+                      : "bg-[#F7FAFC]  dark:bg-[#23262B] dark:text-white text-gray-500"
                   }  p-3 rounded-full inline-block`}
                 >
                   <setting.icon />

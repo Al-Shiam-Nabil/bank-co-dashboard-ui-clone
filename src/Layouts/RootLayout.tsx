@@ -8,9 +8,12 @@ import {
   Mail,
   Moon,
   Search,
+  Sun,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, NavLink, Outlet } from "react-router";
+import ProfileImage from "../assets/profileImage.png";
+import DropdownModal from "../Components/Ui/DropdownModal";
 import {
   Analytics,
   Calender,
@@ -30,7 +33,6 @@ import {
   Transition,
   User,
 } from "../Icons";
-import ProfileImage from "../assets/profileImage.png";
 
 export default function RootLayout() {
   const [showSideBar, setShowSideBar] = useState<boolean>(false);
@@ -146,19 +148,19 @@ export default function RootLayout() {
         {
           label: "signup",
           icon: User,
-          url: "signup",
+          url: "/signup",
         },
         ,
         {
           label: "coming soon",
           icon: ComingSoon,
-          url: "#",
+          url: "/coming-soon",
         },
         ,
         {
           label: "404",
           icon: Error404,
-          url: "#",
+          url: "/error404",
         },
         ,
         {
@@ -213,7 +215,7 @@ export default function RootLayout() {
             <input
               type="text"
               placeholder="Search.."
-              className="w-full h-full focus:outline focus:outline-primary  bg-dark4 dark:bg-[#23262B] pl-11.5 px-4 rounded-sm"
+              className="w-full h-full focus:outline focus:outline-primary text-black dark:text-white  bg-dark4 dark:bg-[#23262B] pl-11.5 px-4 rounded-sm"
             />
 
             <Search
@@ -229,34 +231,53 @@ export default function RootLayout() {
 
           {/* icons */}
           <div className="flex items-center gap-8 2xl:gap-12">
-            <div className="hidden 2xl:flex gap-5 items-center">
+            <div className="hidden 2xl:flex gap-5 items-center ">
               {/* dark mode */}
               <div
                 onClick={handleDark}
                 className="w-13 h-13 rounded-xl border border-primary grid place-items-center cursor-pointer "
               >
-                <Moon className="text-[#1a202c] dark:text-white" />
+                {theme === "dark" ? (
+                  <Sun className="text-[#1a202c] dark:text-white" />
+                ) : (
+                  <Moon className="text-[#1a202c] dark:text-white" />
+                )}
               </div>
 
               {/* notification */}
-              <div className="relative w-13 h-13 rounded-xl border border-primary grid place-items-center cursor-pointer ">
-                <BellRing className="text-[#1a202c] dark:text-white" />
 
-                <div className="w-4 h-4 border-3 border-white bg-dark3 rounded-full absolute -right-1 -top-1"></div>
-              </div>
+              <DropdownModal
+                trigger={
+                  <div className="relative w-13 h-13 rounded-xl border border-primary grid place-items-center cursor-pointer ">
+                    <BellRing className="text-[#1a202c] dark:text-white" />
+
+                    <div className="w-4 h-4 border-3 border-white bg-dark3 rounded-full absolute -right-1 -top-1"></div>
+                  </div>
+                }
+              ></DropdownModal>
 
               {/* message */}
-              <div className="relative w-13 h-13 rounded-xl border border-primary grid place-items-center cursor-pointer ">
-                <Mail className="text-[#1a202c] dark:text-white" />
 
-                <div className="w-4 h-4 border-3 border-white bg-red-400 rounded-full absolute -right-1 -top-1"></div>
-              </div>
+              <DropdownModal
+                trigger={
+                  <div className="relative w-13 h-13 rounded-xl border border-primary grid place-items-center cursor-pointer ">
+                    <Mail className="text-[#1a202c] dark:text-white" />
+
+                    <div className="w-4 h-4 border-3 border-white bg-red-400 rounded-full absolute -right-1 -top-1"></div>
+                  </div>
+                }
+              ></DropdownModal>
 
               {/* gift */}
-              <div className="relative w-13 h-13 rounded-xl border border-primary grid place-items-center cursor-pointer ">
-                <Gift className="text-[#1a202c] dark:text-white" />
-                <div className="w-4 h-4 border-3 border-white bg-dark3 rounded-full absolute -right-1 -top-1"></div>
-              </div>
+
+              <DropdownModal
+                trigger={
+                  <div className="relative w-13 h-13 rounded-xl border border-primary grid place-items-center cursor-pointer ">
+                    <Gift className="text-[#1a202c] dark:text-white" />
+                    <div className="w-4 h-4 border-3 border-white bg-dark3 rounded-full absolute -right-1 -top-1"></div>
+                  </div>
+                }
+              ></DropdownModal>
             </div>
 
             {/* separator */}
@@ -313,8 +334,8 @@ export default function RootLayout() {
         <div
           className={`noScrollBar w-77   shrink-0  h-full overflow-y-auto  bg-white dark:bg-[#1D1E24] dark:text-white border-t border-dark3/30 fixed  lg:top-27 z-80 lg:z-30 transition-transform duration-700 ease-in-out   ${
             showSideBar
-              ? "translate-x-0 lg:-translate-x-100 w-0"
-              : "-translate-x-100  lg:translate-x-0"
+              ? "translate-x-0 lg:-translate-x-100  w-0"
+              : "-translate-x-100   lg:translate-x-0"
           } `}
         >
           {/* logo  small device */}
@@ -360,7 +381,7 @@ export default function RootLayout() {
                           <span>
                             <ChevronRight
                               size={20}
-                              className="group-hover:text-primary transition-all duration-200 ease-in-out"
+                              className=" group-hover:text-primary transition-all duration-200 ease-in-out"
                             />
                           </span>
                         )}

@@ -111,16 +111,21 @@ export default function IntegrationsPage() {
     <div className="m-12">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6">
         {integrationArr.map((data, index) => (
-          <div key={index} className="bg-white p-6 rounded-lg">
+          <div
+            key={index}
+            className="bg-white dark:bg-[#1D1E24] dark:text-white p-6 rounded-lg"
+          >
             <div className="flex items-center gap-5">
               <data.icon />
               <div>
                 <h3 className="text-2xl font-bold">{data?.title}</h3>
-                <p className="text-dark2">{data?.category}</p>
+                <p className="text-dark2 dark:text-white">{data?.category}</p>
               </div>
             </div>
 
-            <p className="text-dark2 text-lg my-7">{data?.description}</p>
+            <p className="text-dark2 dark:text-white text-lg my-7">
+              {data?.description}
+            </p>
 
             <button
               className={`h-12 rounded-lg w-full ${

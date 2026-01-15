@@ -7,7 +7,7 @@ export default function PersonalInformation() {
     <div className=" grid grid-cols-6 gap-10">
       {/* left */}
       <div className=" col-span-4">
-        <h3 className="text-2xl font-bold border-b border-dark3 pb-5">
+        <h3 className="text-2xl font-bold border-b border-dark3 dark:border-gray-700 pb-5">
           Personal Information's
         </h3>
 
@@ -17,7 +17,7 @@ export default function PersonalInformation() {
               <label className="font-medium text-dark2">First Name</label>
               <input
                 type="text"
-                className="h-14 px-4 bg-dark4 rounded-lg w-full shrink-0 focus:outline focus:outline-primary"
+                className="h-14 px-4 bg-dark4 dark:bg-[#23262B] dark:text-white rounded-lg w-full shrink-0 focus:outline focus:outline-primary"
               />
             </div>
 
@@ -25,7 +25,7 @@ export default function PersonalInformation() {
               <label className="font-medium text-dark2">Last Name</label>
               <input
                 type="text"
-                className="h-14 px-4 bg-dark4 rounded-lg  w-full shrink-0 focus:outline focus:outline-primary"
+                className="h-14 px-4 bg-dark4 dark:bg-[#23262B] dark:text-white rounded-lg  w-full shrink-0 focus:outline focus:outline-primary"
               />
             </div>
           </div>
@@ -35,7 +35,7 @@ export default function PersonalInformation() {
               <label className="font-medium text-dark2">Email</label>
               <input
                 type="email"
-                className="h-14 px-4 bg-dark4 rounded-lg w-full shrink-0 focus:outline focus:outline-primary"
+                className="h-14 px-4 bg-dark4 dark:bg-[#23262B] dark:text-white rounded-lg w-full shrink-0 focus:outline focus:outline-primary"
               />
             </div>
 
@@ -45,7 +45,7 @@ export default function PersonalInformation() {
               </label>
               <input
                 type="text"
-                className="h-14 px-4 bg-dark4 rounded-lg  w-full shrink-0 focus:outline focus:outline-primary"
+                className="h-14 px-4 bg-dark4 dark:bg-[#23262B] dark:text-white rounded-lg  w-full shrink-0 focus:outline focus:outline-primary"
               />
             </div>
           </div>
@@ -58,7 +58,7 @@ export default function PersonalInformation() {
               </label>
               <input
                 type="text"
-                className="h-14 px-4 bg-dark4 rounded-lg w-full shrink-0 focus:outline focus:outline-primary"
+                className="h-14 px-4 bg-dark4 dark:bg-[#23262B] dark:text-white rounded-lg w-full shrink-0 focus:outline focus:outline-primary"
               />
             </div>
 
@@ -67,7 +67,7 @@ export default function PersonalInformation() {
               <input
                 type="text"
                 placeholder="Washington"
-                className="h-14 px-4 bg-dark4 rounded-lg  w-full shrink-0 focus:outline focus:outline-primary"
+                className="h-14 px-4 bg-dark4 dark:bg-[#23262B] dark:text-white rounded-lg  w-full shrink-0 focus:outline focus:outline-primary"
               />
             </div>
           </div>
@@ -77,7 +77,7 @@ export default function PersonalInformation() {
               <label className="font-medium text-dark2">Address</label>
               <input
                 type="text"
-                className="h-14 px-4 bg-dark4 rounded-lg w-full shrink-0 focus:outline focus:outline-primary"
+                className="h-14 px-4 bg-dark4 dark:bg-[#23262B] dark:text-white rounded-lg w-full shrink-0 focus:outline focus:outline-primary"
               />
             </div>
 
@@ -85,7 +85,7 @@ export default function PersonalInformation() {
               <label className="font-medium text-dark2">Postal Code</label>
               <input
                 type="text"
-                className="h-14 px-4 bg-dark4 rounded-lg  w-full shrink-0 focus:outline focus:outline-primary"
+                className="h-14 px-4 bg-dark4 dark:bg-[#23262B] dark:text-white rounded-lg  w-full shrink-0 focus:outline focus:outline-primary"
               />
             </div>
           </div>
@@ -96,7 +96,7 @@ export default function PersonalInformation() {
               <label className="font-medium text-dark2">Facebook</label>
               <input
                 type="text"
-                className="h-14 px-4 bg-dark4 rounded-lg w-full shrink-0 focus:outline focus:outline-primary"
+                className="h-14 px-4 bg-dark4 dark:bg-[#23262B] dark:text-white rounded-lg w-full shrink-0 focus:outline focus:outline-primary"
               />
             </div>
 
@@ -104,7 +104,7 @@ export default function PersonalInformation() {
               <label className="font-medium text-dark2">Twitter</label>
               <input
                 type="text"
-                className="h-14 px-4 bg-dark4 rounded-lg  w-full shrink-0 focus:outline focus:outline-primary"
+                className="h-14 px-4 bg-dark4 dark:bg-[#23262B] dark:text-white rounded-lg  w-full shrink-0 focus:outline focus:outline-primary"
               />
             </div>
           </div>
@@ -114,7 +114,7 @@ export default function PersonalInformation() {
               <label className="font-medium text-dark2">Linkedin</label>
               <input
                 type="text"
-                className="h-14 px-4 bg-dark4 rounded-lg w-full shrink-0 focus:outline focus:outline-primary"
+                className="h-14 px-4 bg-dark4 dark:bg-[#23262B] dark:text-white rounded-lg w-full shrink-0 focus:outline focus:outline-primary"
               />
             </div>
 
@@ -122,7 +122,7 @@ export default function PersonalInformation() {
               <label className="font-medium text-dark2">Youtube</label>
               <input
                 type="text"
-                className="h-14 px-4 bg-dark4 rounded-lg  w-full shrink-0 focus:outline focus:outline-primary"
+                className="h-14 px-4 bg-dark4 dark:bg-[#23262B] dark:text-white rounded-lg  w-full shrink-0 focus:outline focus:outline-primary"
               />
             </div>
           </div>

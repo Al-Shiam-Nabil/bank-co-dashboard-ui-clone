@@ -63,7 +63,7 @@ function HomePage() {
     <>
       <div className="grid grid-cols-12 gap-8 m-12">
         {/* left */}
-        <div className="col-span-9 space-y-8">
+        <div className="2xl:col-span-9 col-span-12 space-y-8">
           <div className="grid grid-cols-3 gap-5">
             {statesticTotalArray.map((statestic, index) => (
               <StatesticTotal
@@ -95,7 +95,7 @@ function HomePage() {
 
         {/* right */}
         <div
-          className="col-span-3
+          className="2xl:col-span-3 col-span-12
     "
         >
           <MyWalletComponent />

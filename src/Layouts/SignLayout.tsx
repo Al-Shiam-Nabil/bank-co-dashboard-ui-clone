@@ -7,7 +7,7 @@ import VlineSignin from "../assets/vlineSignin.svg";
 
 export default function SignLayout() {
   return (
-    <div className="flex items-center ">
+    <div className="flex  ">
       {/* left */}
       <div className="w-1/2 min-h-screen bg-white p-10">
         {/* logo */}
@@ -22,7 +22,7 @@ export default function SignLayout() {
       </div>
 
       {/* right */}
-      <div className="w-1/2 min-h-screen bg-[#F6FAFF] p-10 relative">
+      <div className="w-1/2 min-h-screen bg-[#F6FAFF] p-10  relative">
         <div className="absolute ">
           <img src={SqureSignin} alt="" />
         </div>

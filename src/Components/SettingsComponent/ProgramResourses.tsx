@@ -65,9 +65,9 @@ export default function ProgramResourses() {
               </div>
             ))}
 
-            <div className="border-2 border-dashed border-dark3 w-40 h-40 rounded-lg grid place-items-center">
+            <div className="border-2 border-dashed border-dark3 dark:border-gray-600 w-40 h-40 rounded-lg grid place-items-center">
               <div className="text-center">
-                <div className="bg-[#F8F8F8] rounded-lg inline-block p-3">
+                <div className="bg-[#F8F8F8] dark:bg-[#23262B] rounded-lg inline-block p-3">
                   <Plus size={16} />
                 </div>
                 <p className="text-dark2 font-medium">Add Folder</p>
@@ -98,33 +98,35 @@ export default function ProgramResourses() {
         <div>
           <div className="grid place-items-center">
             <FolderIcon />
-            <h3 className="text-2xl font-semibold text-dark2">Projects</h3>
+            <h3 className="text-2xl font-semibold text-dark2 dark:text-white">
+              Projects
+            </h3>
           </div>
 
           <div className="space-y-5 py-7 border-b border-dark3">
             <p className="font-semibold uppercase">Info</p>
 
-            <div className="flex items-center justify-between font-medium text-dark2">
+            <div className="flex items-center justify-between font-medium text-dark2 dark:text-white">
               <p>Type</p>
               <p>Folder</p>
             </div>
-            <div className="flex items-center justify-between font-medium text-dark2">
+            <div className="flex items-center justify-between font-medium text-dark2 dark:text-white">
               <p>Size</p>
               <p>500 MB</p>
             </div>
-            <div className="flex items-center justify-between font-medium text-dark2">
+            <div className="flex items-center justify-between font-medium text-dark2 dark:text-white">
               <p>Owner</p>
               <p>BankCo</p>
             </div>
-            <div className="flex items-center justify-between font-medium text-dark2">
+            <div className="flex items-center justify-between font-medium text-dark2 dark:text-white">
               <p>Location</p>
               <p>My Files</p>
             </div>
-            <div className="flex items-center justify-between font-medium text-dark2">
+            <div className="flex items-center justify-between font-medium text-dark2 dark:text-white">
               <p>Modified</p>
               <p>Sep 17, 2020 4:25</p>
             </div>
-            <div className="flex items-center justify-between font-medium text-dark2">
+            <div className="flex items-center justify-between font-medium text-dark2 dark:text-white">
               <p>Created</p>
               <p>Sep 17, 2020 4:25</p>
             </div>
@@ -134,16 +136,16 @@ export default function ProgramResourses() {
           <div className="space-y-5 py-7 ">
             <p className="font-semibold uppercase">Settings</p>
 
-            <div className="flex items-center justify-between font-medium text-dark2">
+            <div className="flex items-center justify-between font-medium text-dark2 dark:text-white">
               <p>File Sharing</p>
               <input type="checkbox" />
             </div>
 
-            <div className="flex items-center justify-between font-medium text-dark2">
+            <div className="flex items-center justify-between font-medium text-dark2 dark:text-white">
               <p>Backup</p>
               <input type="checkbox" />
             </div>
-            <div className="flex items-center justify-between font-medium text-dark2">
+            <div className="flex items-center justify-between font-medium text-dark2 dark:text-white">
               <p>Sync</p>
               <input type="checkbox" />
             </div>

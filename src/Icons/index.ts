@@ -26,9 +26,11 @@ import MyWallet from "../Icons/myWallet.svg?react";
 import Notification from "../Icons/notification.svg?react";
 import PaymentIcon from "../Icons/paymentIcon.svg";
 
+import Flag from "../Icons/flag.svg?react";
 import PayPal from "../Icons/payPal.svg?react";
 import Progress from "../Icons/progress.svg?react";
 import ProjectIcon from "../Icons/projectIcon.svg?react";
+import SecurityImage from "../Icons/securityImage.svg?react";
 import SellNotification from "../Icons/sellNotification.svg?react";
 import Setting from "../Icons/setting.svg?react";
 import Slack from "../Icons/slack.svg?react";
@@ -54,6 +56,7 @@ export {
   Error404,
   FileIcon,
   FileIcon2,
+  Flag,
   FolderIcon,
   FollowerNotification,
   FullLogo,
@@ -72,6 +75,7 @@ export {
   PayPal,
   Progress,
   ProjectIcon,
+  SecurityImage,
   SellNotification,
   Setting,
   Slack,

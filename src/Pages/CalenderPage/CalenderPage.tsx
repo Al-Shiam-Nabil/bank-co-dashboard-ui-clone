@@ -7,7 +7,7 @@ export default function CalenderPage() {
     <div className="grid grid-cols-12 gap-8 m-12">
       {/* left */}
       <div className="col-span-9 space-y-8">
-        <div className="bg-white py-5 px-10 rounded-lg ">
+        <div className="bg-white dark:bg-[#1D1E24] dark:text-white py-5 px-10 rounded-lg ">
           <div className="flex items-center justify-between border-b border-dark3 pb-5">
             <h3 className="text-2xl font-bold">Calender</h3>
             <p className="text-xl font-bold">January 2026</p>

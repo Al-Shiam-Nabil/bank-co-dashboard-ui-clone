@@ -93,12 +93,12 @@ export default function UserPage() {
       <div className="col-span-9">
         {/* search */}
 
-        <div className="bg-white rounded-lg p-4">
+        <div className="bg-white dark:bg-[#151515] rounded-lg p-4">
           <div className="w-full flex  items-center gap-8">
             <div className="relative flex-1 ">
               <input
                 type="text"
-                className=" h-full w-full py-2  pl-15 pr-5 outline-none border-r border-dark3 "
+                className=" h-full w-full py-2 dark:text-white dark:border-gray-600  pl-15 pr-5 outline-none border-r border-dark3 "
                 placeholder="Job title , company or Keywords"
               />
 
@@ -109,7 +109,7 @@ export default function UserPage() {
 
             <div>
               <GenarelDropdownComponent dropdownInfo={dropdownInfo}>
-                <div className="flex items-center w-76.5 border-r border-dark3">
+                <div className="flex items-center w-76.5 border-r dark:text-white dark:border-gray-600  border-dark3">
                   <MapPin stroke="gray" />
                   <div className="flex items-center justify-between">
                     <input
@@ -142,7 +142,11 @@ export default function UserPage() {
             {usersArr.map((user, index) => (
               <tr
                 key={user.id}
-                className={`${index % 2 ? "bg-transparent" : "bg-white"}`}
+                className={`${
+                  index % 2
+                    ? "bg-transparent dark:bg-[#151515]"
+                    : "bg-white dark:bg-[#151515]"
+                } dark:text-white`}
               >
                 <td className=" rounded-l-xl p-4">
                   <div className="flex items-center gap-4">
@@ -161,7 +165,7 @@ export default function UserPage() {
                     <div>
                       <h3 className="text-lg font-bold">{user?.name}</h3>
                       <div className="flex items-center gap-1 text-sm text-gray-500">
-                        <span className="flex items-center gap-1 font-medium text-base">
+                        <span className="flex items-center gap-1 font-medium dark:text-white text-base">
                           {user?.designation} <Dot size={14} />
                         </span>
                         <span>{user?.location}</span>
@@ -215,16 +219,16 @@ export default function UserPage() {
 
       {/* right */}
       <div
-        className="col-span-3 bg-white rounded-lg p-12 mt-12
+        className="col-span-3 bg-white dark:bg-[#151515] dark:text-white rounded-lg p-12 mt-12
       "
       >
-        <div className="text-center space-y-2 relative border-b border-dark3 pb-8">
+        <div className="text-center space-y-2 relative border-b border-dark3 dark:border-gray-700 pb-8">
           <div className="absolute left-[50%] -top-20 translate-x-[-50%]">
             <img src={User1} alt="user" />
           </div>
 
           <h3 className="text-xl font-bold">Abdur Rohman</h3>
-          <p className="text-dark2 font-medium ">
+          <p className="text-dark2 dark:text-white font-medium ">
             Finance managers • Jakarta, Indonesia • 2 days ago
           </p>
 
@@ -259,38 +263,48 @@ export default function UserPage() {
           </div>
         </div>
 
-        <div className="space-y-5 py-8 border-b border-dark3">
+        <div className="space-y-5 py-8 border-b border-dark3 dark:border-gray-700">
           <div className="flex items-center justify-between">
-            <p className="text-sm font-medium text-dark2">Experience</p>
+            <p className="text-sm font-medium text-dark2  dark:text-white">
+              Experience
+            </p>
 
             <p className="text sm font-semibold">2-4 Years</p>
           </div>
 
           <div className="flex items-center justify-between">
-            <p className="text-sm font-medium text-dark2">Seniority Level</p>
+            <p className="text-sm font-medium text-dark2 dark:text-white">
+              Seniority Level
+            </p>
 
             <p className="text sm font-semibold"> Senior Level</p>
           </div>
           <div className="flex items-center justify-between">
-            <p className="text-sm font-medium text-dark2">Employment</p>
+            <p className="text-sm font-medium text-dark2 dark:text-white">
+              Employment
+            </p>
 
             <p className="text sm font-semibold"> Full Time</p>
           </div>
           <div className="flex items-center justify-between">
-            <p className="text-sm font-medium text-dark2">Salary</p>
+            <p className="text-sm font-medium text-dark2 dark:text-white">
+              Salary
+            </p>
 
             <p className="text sm font-semibold">$250-300</p>
           </div>
         </div>
 
         {/* files */}
-        <div className="py-8  border-b border-dark3">
-          <p className="text-sm text-dark2 font-medium mb-4">Files</p>
+        <div className="py-8  border-b border-dark3 dark:border-gray-700">
+          <p className="text-sm text-dark2 font-medium mb-4 dark:text-white">
+            Files
+          </p>
 
           <div className="space-y-3">
-            <div className="flex items-center justify-between p-3 rounded-lg bg-[#E4FDED]">
+            <div className="flex items-center justify-between p-3 rounded-lg bg-[#E4FDED] dark:bg-[#23262B]">
               <div className="text-sm flex items-center gap-3 ">
-                <div className="bg-white p-2 rounded-lg ">
+                <div className="bg-white dark:bg-[#151515]  p-2 rounded-lg ">
                   <ClipboardList className="text-primary" />
                 </div>
                 <div>
@@ -304,9 +318,9 @@ export default function UserPage() {
               </div>
             </div>
 
-            <div className="flex items-center justify-between p-3 rounded-lg bg-[#E4FDED]">
+            <div className="flex items-center justify-between p-3 rounded-lg bg-[#E4FDED] dark:bg-[#23262B]">
               <div className="text-sm flex items-center gap-3 ">
-                <div className="bg-white p-2 rounded-lg ">
+                <div className="bg-white p-2 rounded-lg dark:bg-[#151515]  ">
                   <ClipboardList className="text-primary" />
                 </div>
                 <div>

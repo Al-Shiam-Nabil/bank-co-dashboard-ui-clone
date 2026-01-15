@@ -2,8 +2,8 @@ import { LoopArrow } from "../../Icons";
 
 export default function TotalBalance() {
   return (
-    <div className="px-7 py-11 bg-white rounded-lg ">
-      <div className="border border-dark3 rounded-xl px-8 pt-8 pb-12 relative">
+    <div className="px-7 py-11 bg-white dark:bg-[#1D1E24] dark:text-white rounded-lg ">
+      <div className="border border-dark3 dark:border-gray-700 rounded-xl px-8 pt-8 pb-12 relative">
         <p className="text-2xl font-semibold">Total Balance</p>
         <h3 className="text-4xl font-bold mb-3">
           $88,232.00{" "}
@@ -18,7 +18,7 @@ export default function TotalBalance() {
           </div>
         </div>
 
-        <button className="text-dark rounded-lg border border-gray-400 bg-white px-6 py-3 font-medium absolute -bottom-6  left-[50%] -translate-x-[50%] whitespace-nowrap text-dark2 text-sm font-medium">
+        <button className="text-dark rounded-lg border border-gray-400 bg-white dark:bg-[#23262B] px-6 py-3 font-medium absolute -bottom-6  left-[50%] -translate-x-[50%] whitespace-nowrap text-dark2 dark:text-white text-sm cursor-pointer">
           Withdraw All Earning
         </button>
       </div>

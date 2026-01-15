@@ -48,7 +48,7 @@ export default function Inbox() {
   return (
     <div className="grid grid-cols-12">
       {/* left */}
-      <div className="border border-dark3  col-span-3 h-[calc(100vh-108px)] pt-6 pr-7 pb-10 pl-12 bg-white">
+      <div className="border border-dark3 dark:border-gray-700  col-span-3 h-[calc(100vh-108px)] pt-6 pr-7 pb-10 pl-12 bg-white dark:bg-[#1D1E24] dark:text-white">
         <div className="flex items-center justify-between">
           <h3 className="text-[28px] font-semibold">Messages (22)</h3>
           <SquarePen stroke="gray" />
@@ -58,7 +58,7 @@ export default function Inbox() {
         <div className="relative my-5">
           <input
             type="text"
-            className="bg-dark5 w-full py-3.5 rounded-lg pl-12 pr-4 focus:outline focus:outline-primary"
+            className="bg-dark5 dark:bg-[#23262B] w-full py-3.5 rounded-lg pl-12 pr-4 focus:outline focus:outline-primary"
             placeholder="Search message"
           />
           <div className="absolute top-3 left-4">
@@ -68,10 +68,12 @@ export default function Inbox() {
 
         {/* all message */}
         <div>
-          <div className="flex items-center justify-between mb-5">
+          <div className="flex items-center justify-between mb-5 ">
             <div className="flex items-center gap-3">
               <Mail size={18} stroke="gray" />
-              <p className=" font-medium text-dark2">All Message</p>
+              <p className=" font-medium text-dark2 dark:text-white">
+                All Message
+              </p>
             </div>
 
             <div>
@@ -79,7 +81,7 @@ export default function Inbox() {
             </div>
           </div>
 
-          <div className="flex items-center justify-between py-4 px-2 hover:rounded-lg border-b border-dark3 cursor-pointer hover:bg-dark5">
+          <div className="flex items-center justify-between py-4 px-2 hover:rounded-lg border-b dark:border-gray-700 border-dark3 cursor-pointer hover:bg-dark5 dark:hover:bg-[#23262B]">
             <div className="flex items-cente gap-3">
               <div className="relative w-14 h-14">
                 <img src={User1} alt="" className="w-14 h-14 object-contain" />
@@ -89,20 +91,24 @@ export default function Inbox() {
 
               <div className="space-y-1">
                 <h3 className="text-xl font-bold">Emilia Sam</h3>
-                <p className="text-sm text-dark2">Sent message</p>
+                <p className="text-sm text-dark2 dark:text-white">
+                  Sent message
+                </p>
               </div>
             </div>
             {/* time */}
             <div>
-              <p className="text-lg font-semibold text-dark2">6:15</p>
+              <p className="text-lg font-semibold text-dark2 dark:text-white">
+                6:15
+              </p>
             </div>
           </div>
         </div>
       </div>
 
       {/* right */}
-      <div className="border border-l-0 border-r-0 border-b-0 border-dark3  col-span-9">
-        <div className="flex justify-between items-center p-5 bg-white">
+      <div className="border border-l-0 border-r-0 border-b-0 border-dark3 dark:border-gray-700  col-span-9">
+        <div className="flex justify-between items-center p-5 bg-white dark:bg-[#1D1E24] dark:text-white">
           <div className="flex items-center gap-3">
             <div className="relative w-12 h-12">
               <img
@@ -152,7 +158,7 @@ export default function Inbox() {
                             {data?.message}
                           </p>
                         </div>
-                        <p className="text-sm text-dark2">10:30 PM</p>
+                        <p className="text-sm text-dark2 ">10:30 PM</p>
                       </div>
                     )}
 
@@ -165,7 +171,7 @@ export default function Inbox() {
                             alt="user"
                             className="w-9 h-9 object-contain"
                           />
-                          <p className="text-sm text-white bg-primary dark:bg-[#23262B] rounded-tl-0 rounded-b-lg rounded-tr-lg max-w-125 font-medium p-3">
+                          <p className="text-sm text-white bg-primary  rounded-tl-0 rounded-b-lg rounded-tr-lg max-w-125 font-medium p-3">
                             {data?.message}
                           </p>
                         </div>
@@ -191,7 +197,7 @@ export default function Inbox() {
                 type="text"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className=" w-full h-full rounded-lg bg-white border-dark2 dark:bg-[#23262B]  focus:outline focus:outline-primary px-12"
+                className=" w-full h-full rounded-lg bg-white dark:bg-[#1D1E24] border-dark2 dark:text-white  focus:outline focus:outline-primary px-12"
               />
 
               <div className="absolute top-5 left-5 ">

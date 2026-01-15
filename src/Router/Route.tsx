@@ -3,6 +3,8 @@ import { createBrowserRouter } from "react-router";
 import RootLayout from "../Layouts/RootLayout";
 import SignLayout from "../Layouts/SignLayout";
 import CalenderPage from "../Pages/CalenderPage/CalenderPage";
+import ComingSoonPage from "../Pages/ComingSoonPage/ComingSoonPage";
+import Errorpage from "../Pages/ErrorPage/Errorpage";
 import HistoryPage from "../Pages/History/HistoryPage";
 import HomePage from "../Pages/Home/HomePage";
 import Inbox from "../Pages/Inbox/Inbox";
@@ -20,6 +22,7 @@ const router = createBrowserRouter([
   {
     path: "/dashboard",
     Component: RootLayout,
+    errorElement: <Errorpage />,
     children: [
       {
         index: true,
@@ -65,8 +68,23 @@ const router = createBrowserRouter([
         path: "settings",
         Component: SettingPage,
       },
+      {
+        path: "coming-soon",
+        Component: ComingSoonPage,
+      },
     ],
   },
+
+  {
+    path: "coming-soon",
+    Component: ComingSoonPage,
+  },
+
+  {
+    path: "error404",
+    Component: Errorpage,
+  },
+
   {
     path: "/",
     Component: SignLayout,
